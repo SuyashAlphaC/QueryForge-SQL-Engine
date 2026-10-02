@@ -11,7 +11,7 @@ const crypto                  = require('crypto')
 const { tableFromIPC }         = require('apache-arrow')
 const db                      = require('../db')
 const { executeTaskOnWorker } = require('../grpc/workerClient')
-const { workerRegistry }      = require('./workerRegistry')
+const { workerRegistry, compareWorkerSchedulingOrder } = require('./workerRegistry')
 const { buildExecutionPlan, validatePlanAgainstSchema, validateJoinPlanAgainstSchemas } = require('./queryPlanner')
 const { mergeResults }        = require('./resultMerger')
 const { getJobSubscribers }   = require('../websocket/wsServer')
@@ -59,7 +59,7 @@ function getEligibleWorkers (plan, workerLimit = 0) {
   const eligible = getActiveWorkers()
     .filter(worker => !plan.join || (worker.capabilities?.includes('join') &&
       (plan.joinStrategy === 'broadcast' || plan.joinStrategy === 'local' || worker.capabilities?.includes('shuffle'))))
-    .sort((left, right) => left.workerId.localeCompare(right.workerId))
+    .sort(compareWorkerSchedulingOrder)
   return workerLimit > 0 ? eligible.slice(0, workerLimit) : eligible
 }
 
