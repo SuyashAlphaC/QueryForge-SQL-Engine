@@ -2,15 +2,15 @@
 
 Status: **passed**
 
-Generated: 2026-10-02T09:40:47.105Z
+Generated: 2026-10-02T09:49:32.462Z
 
 - Differential: 100 queries
 - Join: 3 queries, local
 - Approximation: uniform, Zipfian, and adversarial gates passed
 - Scaling: 1/2/4/8 workers, 5 measured runs after warm-up
-- Adaptive skew: 3604 ms static → 2737 ms adaptive p50
-- MapReduce: median combiner transfer reduction 99.6%; injected p99 954 → 305 ms
-- Spark-style abstractions: lazy plan p95 7 ms; cold/warm cache 66 → 51 ms; one-partition recovery checksum preserved
+- Adaptive skew: 3278 ms static → 3168 ms adaptive p50
+- MapReduce: median combiner transfer reduction 99.6%; injected p99 967 → 309 ms
+- Spark-style abstractions: lazy plan p95 7 ms; cold/warm cache 60 → 53 ms; one-partition recovery checksum preserved
 - Cost Analyzer: 5 canonical autopsies and 5 checksum-safe workload replays
 - Streaming SQL: 601 accepted events, 0 duplicate/lost; TUMBLE/HOP/SESSION fixture passed
 - Chaos: 5 injected modes

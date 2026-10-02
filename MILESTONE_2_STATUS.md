@@ -6,7 +6,7 @@
 
 **Overall status:** **Complete and verified**
 
-**Acceptance code revision:** `6ed8c2ee70d467652d131584b3073b690ed2a230`
+**Acceptance code revision:** `5d84e69069c52014f4cd34e36fc8d23bfb9a7f9b`
 
 ## Executive summary
 
@@ -89,7 +89,7 @@ The generated artifacts are:
   all three populated hot buckets.
 - Measured EXPLAIN exposes input, shuffle, output, CPU, and critical-path costs
   beside the teaching equation.
-- Five seeded straggler runs reduced injected p99 from 954 ms to 305 ms while
+- Five seeded straggler runs reduced injected p99 from 967 ms to 309 ms while
   preserving the checksum.
 - Speculative execution committed one logical winner and cancelled or rejected
   the losing attempt.
@@ -110,7 +110,7 @@ Primary evidence:
 - `collect`, `count`, `write`, and `materialize` remain explicit actions.
 - `MEMORY`, `DISK`, and `MEMORY_AND_DISK` cache runs preserved checksums and
   produced eight warm hits each.
-- The 1 MiB eviction action left its selected worker at 833,793 bytes.
+- The 1 MiB eviction action left its selected worker at 831,882 bytes.
 - Broadcast reuse covered four workers, produced eight warm hits, and leaked
   zero pinned references.
 - A speculative run produced nine attempts and exactly eight committed winners;

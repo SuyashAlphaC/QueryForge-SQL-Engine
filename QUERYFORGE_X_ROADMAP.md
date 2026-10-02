@@ -255,7 +255,7 @@ its focused gate and the complete Milestone 1 regression matrix both pass.
 | 8 Streaming SQL | **Complete** | Kafka-compatible source, windows/watermarks, durable offsets/state, zero committed-batch loss, materialization |
 | 9 Educational presentation | **Complete** | One-command crash demo, course tooltips, lineage/ablation views, quiz and accessible walkthrough |
 
-The clean rebuilt deployment passed all 13 suites on code revision `6ed8c2e`.
+The clean rebuilt deployment passed all 13 suites on code revision `5d84e69`.
 `benchmarks/artifacts/milestone2-report.json` now records
 `verificationState: full-matrix-passed`; the detailed machine-readable results,
 checksums, timings, environment, and suite outputs are in
