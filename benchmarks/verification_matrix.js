@@ -7,6 +7,8 @@ const path = require('node:path')
 
 const ROOT = path.resolve(__dirname, '..')
 const OUTPUT = path.join(__dirname, 'artifacts')
+const API_URL = process.env.QUERYFORGE_URL || 'http://localhost:3000'
+const EXPECTED_WORKERS = Number(process.env.QUERYFORGE_EXPECTED_WORKERS || 8)
 const suites = [
   ['differential', 'differential_test.js'],
   ['storage', 'storage_ablation.js'],
@@ -27,6 +29,31 @@ function parseJsonOutput (output) {
   const start = output.indexOf('{')
   if (start < 0) throw new Error(`Benchmark emitted no JSON: ${output}`)
   return JSON.parse(output.slice(start))
+}
+
+async function waitForStack (timeoutMs = 90_000) {
+  const deadline = Date.now() + timeoutMs
+  let lastState = 'coordinator unavailable'
+  while (Date.now() < deadline) {
+    try {
+      const [healthResponse, workersResponse] = await Promise.all([
+        fetch(`${API_URL}/api/health`),
+        fetch(`${API_URL}/api/workers`)
+      ])
+      if (!healthResponse.ok || !workersResponse.ok) {
+        lastState = `health=${healthResponse.status}, workers=${workersResponse.status}`
+      } else {
+        const workers = await workersResponse.json()
+        const active = workers.filter(worker => worker.liveStatus === 'active' && worker.grpcAlive === true)
+        if (active.length >= EXPECTED_WORKERS) return active.length
+        lastState = `${active.length}/${EXPECTED_WORKERS} workers active`
+      }
+    } catch (error) {
+      lastState = error.cause?.message || error.message
+    }
+    await new Promise(resolve => setTimeout(resolve, 500))
+  }
+  throw new Error(`QueryForge stack did not become ready within ${timeoutMs}ms: ${lastState}`)
 }
 
 function bar (label, value, maximum, color, y) {
@@ -90,8 +117,10 @@ function milestone2Evidence (report) {
   }
 }
 
-function main () {
+async function main () {
   fs.mkdirSync(OUTPUT, { recursive: true })
+  process.stderr.write('[matrix] readiness\n')
+  await waitForStack()
   const results = {}
   const startedAt = new Date().toISOString()
   for (const [name, script] of suites) {
@@ -122,4 +151,4 @@ function main () {
   console.log(JSON.stringify({ status: 'passed', output: OUTPUT, suites: suites.map(([name]) => name) }, null, 2))
 }
 
-try { main() } catch (error) { console.error(error.stack || error.message); process.exit(1) }
+main().catch(error => { console.error(error.stack || error.message); process.exit(1) })
