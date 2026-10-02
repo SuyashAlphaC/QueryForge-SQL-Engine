@@ -194,8 +194,8 @@ services:
     ports:
       - "${FRONTEND_PORT:-5173}:5173"
     environment:
-      VITE_COORDINATOR_URL: http://localhost:3000
-      VITE_WS_URL: ws://localhost:3000
+      VITE_COORDINATOR_URL: "${VITE_COORDINATOR_URL:-http://localhost:3000}"
+      VITE_WS_URL: "${VITE_WS_URL:-ws://localhost:3000}"
     depends_on:
       - coordinator
 
