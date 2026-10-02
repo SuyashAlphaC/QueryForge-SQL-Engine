@@ -6,7 +6,7 @@
 
 **Overall status:** **Complete and verified**
 
-**Acceptance code revision:** `35883b86a4448d8124c3548e4f23a551e28b6ad1`
+**Acceptance code revision:** `0b0f5a24151afaef616b0ce36ae91872757b7a7a`
 
 ## Executive summary
 
@@ -84,7 +84,7 @@ The generated artifacts are:
   all three populated hot buckets.
 - Measured EXPLAIN exposes input, shuffle, output, CPU, and critical-path costs
   beside the teaching equation.
-- Five seeded straggler runs reduced injected p99 from 988 ms to 313 ms while
+- Five seeded straggler runs reduced injected p99 from 948 ms to 324 ms while
   preserving the checksum.
 - Speculative execution committed one logical winner and cancelled or rejected
   the losing attempt.
@@ -101,11 +101,11 @@ Primary evidence:
 
 **Acceptance status:** **Complete**
 
-- Twenty lazy-plan samples produced a 10 ms planning p95, below the 50 ms gate.
+- Twenty lazy-plan samples produced a 17 ms planning p95, below the 50 ms gate.
 - `collect`, `count`, `write`, and `materialize` remain explicit actions.
 - `MEMORY`, `DISK`, and `MEMORY_AND_DISK` cache runs preserved checksums and
   produced eight warm hits each.
-- The 1 MiB eviction action left its selected worker at 834,621 bytes.
+- The 1 MiB eviction action left its selected worker at 838,252 bytes.
 - Broadcast reuse covered four workers, produced eight warm hits, and leaked
   zero pinned references.
 - A speculative run produced nine attempts and exactly eight committed winners;
@@ -131,8 +131,8 @@ Primary evidence:
   computation, waiting, memory, spill, and recomputation.
 - Suggestions retain the exact metric and threshold that triggered them.
 - All five measured what-if executions preserved their result checksums.
-- Four of five measured alternates improved latency; the non-improving result is
-  retained without being mislabeled as an improvement.
+- Three of five measured alternates improved latency; the non-improving results
+  are retained without being mislabeled as improvements.
 - A named five-query workload replay preserved all five checksums.
 - Browser smoke verification rendered and keyboard-expanded the three ranked
   operator cards.
