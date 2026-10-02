@@ -48,6 +48,11 @@ QUERYFORGE_URL=http://localhost:13000 \
 npm run verify
 ```
 
+This reference-stack run enforces the adaptive wall-clock acceptance thresholds.
+GitHub Actions sets `ENFORCE_PERFORMANCE_GATES=false` because shared runners do
+not provide controlled CPU capacity; CI still records those timings and enforces
+all deterministic checksum, plan, skew-split, feedback, and false-positive gates.
+
 All 13 suites passed:
 
 1. DuckDB differential correctness
