@@ -11,7 +11,7 @@
 | 5. Chaos and durable control plane | **Complete** | Durable winner constraints, SHA-256 checksums, content-addressed immutable dataset snapshots, five injected-failure modes, actual worker-container termination, coordinator restart replay, and an automated CI failure matrix are implemented and checksum-verified |
 | 6. Explainability and evaluation | **Complete** | Physical-plan DAGs, CPU/RSS/row/byte counters, Query Autopsy, all requested ablations, TPC-H-derived workloads, verified 1/2/4/8-worker scaling, and a green one-command JSON/Markdown/SVG report are implemented |
 | 2.5. MapReduce refinement | **Complete** | Three checksum-safe combiner ablations, balanced/skewed partition exploration, measured EXPLAIN costs, and a five-run speculation study passed in the 13-suite matrix |
-| 6.5. Spark-style abstractions | **Complete** | Lazy planning p95 was 8 ms; all cache levels, 1 MiB eviction, broadcast pin release, winner-only accumulators, and one-partition lineage replay passed |
+| 6.5. Spark-style abstractions | **Complete** | Lazy planning p95 was 11 ms; all cache levels, 1 MiB eviction, broadcast pin release, winner-only accumulators, and one-partition lineage replay passed |
 | 7. Query Autopsy and Cost Analyzer | **Complete** | Five canonical autopsies, three ranked operators per query, measured what-if execution, and five checksum-safe workload replays passed |
 | 8. Streaming SQL | **Complete** | TUMBLE/HOP/SESSION, coordinator and worker failure, 602 durable inputs, 601 accepted events, one audited late event, zero duplication/loss, and Parquet materialization passed |
 | 9. Educational presentation | **Complete** | The Worker 2 crash demo passed in 2.75 seconds; keyboard walkthrough, quiz, lineage pan/zoom, live 120-event stream, and Query Autopsy inspection passed in a headless browser |
@@ -255,7 +255,7 @@ its focused gate and the complete Milestone 1 regression matrix both pass.
 | 8 Streaming SQL | **Complete** | Kafka-compatible source, windows/watermarks, durable offsets/state, zero committed-batch loss, materialization |
 | 9 Educational presentation | **Complete** | One-command crash demo, course tooltips, lineage/ablation views, quiz and accessible walkthrough |
 
-The clean rebuilt deployment passed all 13 suites on code revision `710a8cf`.
+The clean rebuilt deployment passed all 13 suites on code revision `f275b8a`.
 `benchmarks/artifacts/milestone2-report.json` now records
 `verificationState: full-matrix-passed`; the detailed machine-readable results,
 checksums, timings, environment, and suite outputs are in

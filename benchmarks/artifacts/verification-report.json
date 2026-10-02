@@ -1,8 +1,8 @@
 {
   "status": "passed",
-  "startedAt": "2026-10-02T09:17:14.405Z",
-  "completedAt": "2026-10-02T09:19:56.208Z",
-  "commit": "710a8cfa8a9e9731d35834f03235f8a8a8e7f204",
+  "startedAt": "2026-10-02T09:27:13.375Z",
+  "completedAt": "2026-10-02T09:29:55.046Z",
+  "commit": "f275b8a848287a9f531ba939715e120bc2249b35",
   "hardware": {
     "platform": "linux",
     "release": "6.14.0-37-generic",
@@ -20,36 +20,36 @@
       "seed": "0x51f15e",
       "datasetRows": 300,
       "queries": 100,
-      "durationMs": 6626,
-      "datasetId": "34005bec-ba05-4cbe-9c41-0523fb6cba11"
+      "durationMs": 6510,
+      "datasetId": "ce5548fb-c987-4c32-b0d4-59c5c12af7c0"
     },
     "storage": {
       "status": "passed",
-      "datasetId": "0e3a03bd-8422-4c91-982d-1619858d2138",
+      "datasetId": "cd513ab8-cb40-4717-af9f-eda702dfcc6e",
       "rowCount": 100000,
       "query": "SELECT id, amount FROM storage_ablation WHERE id > 99000 ORDER BY id ASC",
       "csv": {
         "format": "csv",
         "repetitions": 5,
-        "p50Ms": 106,
-        "p95Ms": 112,
+        "p50Ms": 107,
+        "p95Ms": 114,
         "medianScannedBytes": 2127952,
         "medianSkippedBytes": 0,
         "medianTransferredBytes": 26897,
-        "medianPeakTaskMemoryBytes": 917504,
-        "medianCpuTimeMicros": 200264,
+        "medianPeakTaskMemoryBytes": 262144,
+        "medianCpuTimeMicros": 203012,
         "resultRows": 1000
       },
       "parquet": {
         "format": "parquet",
         "repetitions": 5,
-        "p50Ms": 57,
+        "p50Ms": 55,
         "p95Ms": 58,
         "medianScannedBytes": 4633,
         "medianSkippedBytes": 144430,
         "medianTransferredBytes": 25636,
-        "medianPeakTaskMemoryBytes": 3014656,
-        "medianCpuTimeMicros": 61216,
+        "medianPeakTaskMemoryBytes": 2883584,
+        "medianCpuTimeMicros": 53649,
         "resultRows": 1000
       },
       "scannedByteReduction": 0.9978227892358474,
@@ -58,53 +58,53 @@
         "csv": {
           "format": "csv",
           "repetitions": 5,
-          "p50Ms": 123,
-          "p95Ms": 139,
+          "p50Ms": 129,
+          "p95Ms": 169,
           "medianScannedBytes": 2127952,
           "medianSkippedBytes": 0,
           "medianTransferredBytes": 519,
-          "medianPeakTaskMemoryBytes": 15200256,
-          "medianCpuTimeMicros": 249711,
+          "medianPeakTaskMemoryBytes": 8519680,
+          "medianCpuTimeMicros": 286756,
           "resultRows": 1
         },
         "parquet": {
           "format": "parquet",
           "repetitions": 5,
           "p50Ms": 49,
-          "p95Ms": 52,
+          "p95Ms": 54,
           "medianScannedBytes": 149063,
           "medianSkippedBytes": 0,
           "medianTransferredBytes": 468,
-          "medianPeakTaskMemoryBytes": 3014656,
-          "medianCpuTimeMicros": 53250,
+          "medianPeakTaskMemoryBytes": 3538944,
+          "medianCpuTimeMicros": 54068,
           "resultRows": 1
         },
-        "peakTaskMemoryReduction": 0.8016707087038534
+        "peakTaskMemoryReduction": 0.5846153846153845
       },
       "ablations": {
         "storageAndVectorization": {
           "legacyRowCsv": {
             "format": "csv",
             "repetitions": 5,
-            "p50Ms": 123,
-            "p95Ms": 139,
+            "p50Ms": 129,
+            "p95Ms": 169,
             "medianScannedBytes": 2127952,
             "medianSkippedBytes": 0,
             "medianTransferredBytes": 519,
-            "medianPeakTaskMemoryBytes": 15200256,
-            "medianCpuTimeMicros": 249711,
+            "medianPeakTaskMemoryBytes": 8519680,
+            "medianCpuTimeMicros": 286756,
             "resultRows": 1
           },
           "vectorizedParquet": {
             "format": "parquet",
             "repetitions": 5,
             "p50Ms": 49,
-            "p95Ms": 52,
+            "p95Ms": 54,
             "medianScannedBytes": 149063,
             "medianSkippedBytes": 0,
             "medianTransferredBytes": 468,
-            "medianPeakTaskMemoryBytes": 3014656,
-            "medianCpuTimeMicros": 53250,
+            "medianPeakTaskMemoryBytes": 3538944,
+            "medianCpuTimeMicros": 54068,
             "resultRows": 1
           },
           "note": "CSV uses the streamed row executor; Parquet uses vectorized DuckDB batches."
@@ -118,25 +118,25 @@
           "rawProjection": {
             "format": "parquet",
             "repetitions": 5,
-            "p50Ms": 106,
-            "p95Ms": 133,
+            "p50Ms": 103,
+            "p95Ms": 112,
             "medianScannedBytes": 23038,
             "medianSkippedBytes": 126025,
             "medianTransferredBytes": 240868,
-            "medianPeakTaskMemoryBytes": 5373952,
-            "medianCpuTimeMicros": 91446,
+            "medianPeakTaskMemoryBytes": 6533120,
+            "medianCpuTimeMicros": 92190,
             "resultRows": 10000
           },
           "workerPartialAggregate": {
             "format": "parquet",
             "repetitions": 5,
             "p50Ms": 49,
-            "p95Ms": 52,
+            "p95Ms": 51,
             "medianScannedBytes": 23038,
             "medianSkippedBytes": 126025,
             "medianTransferredBytes": 3266,
-            "medianPeakTaskMemoryBytes": 2891776,
-            "medianCpuTimeMicros": 51674,
+            "medianPeakTaskMemoryBytes": 3031040,
+            "medianCpuTimeMicros": 54223,
             "resultRows": 20
           },
           "transferReduction": 0.9864407061128917
@@ -149,12 +149,12 @@
         "local"
       ],
       "queries": 3,
-      "ordersId": "db7764c5-ee17-46bc-b288-a5fc47a6658f",
-      "customersId": "0a5d22e5-3238-4954-a69b-675bcaf77d32"
+      "ordersId": "37487b91-0e2c-4abb-a07b-78aadbaaa400",
+      "customersId": "d148bc27-b83d-478a-a6e0-d8b7e2e2c09e"
     },
     "approximation": {
       "status": "passed",
-      "datasetId": "e1de069d-2264-4b1e-bbaa-769440efcde9",
+      "datasetId": "6c5d23d0-61ef-4390-b632-2961d2817597",
       "rows": 60000,
       "distributions": {
         "uniform": {
@@ -207,46 +207,46 @@
       },
       "runs": [
         {
-          "runId": "5d629dc9-2a1b-436f-8164-38a713440d89",
+          "runId": "c86d3e08-f987-4a76-8146-b40be1fbe930",
           "operation": "approx_count_distinct",
           "stateBytes": 5508,
           "transferredBytes": 16524,
-          "executionTimeMs": 117
+          "executionTimeMs": 90
         },
         {
-          "runId": "bb91f600-4acb-4ab2-9987-52a30806d1a8",
+          "runId": "b1ca4f16-386e-4a55-9592-081d6ef37a40",
           "operation": "approx_count_distinct",
           "stateBytes": 5508,
           "transferredBytes": 16524,
-          "executionTimeMs": 89
+          "executionTimeMs": 95
         },
         {
-          "runId": "27f3a4b1-62d4-4a8a-8d59-31a6aaa01e68",
+          "runId": "716e4f93-bb0a-4f47-976a-f6bb07a7194b",
           "operation": "approx_percentile",
           "stateBytes": 6715,
           "transferredBytes": 19159,
-          "executionTimeMs": 44
+          "executionTimeMs": 47
         },
         {
-          "runId": "8bdc805a-a4f8-4fd6-8b70-c7c93acbe1a0",
+          "runId": "cfba9ed6-25da-4607-9582-8520354c3231",
           "operation": "heavy_hitters",
           "stateBytes": 21557,
           "transferredBytes": 63813,
-          "executionTimeMs": 471
+          "executionTimeMs": 516
         },
         {
-          "runId": "b1b16c25-aae6-4a0a-9012-981e285e0fe3",
+          "runId": "5862a5f7-ef27-47b6-a9db-810d29eb1c9b",
           "operation": "sample",
-          "stateBytes": 3524,
-          "transferredBytes": 10551,
-          "executionTimeMs": 160
+          "stateBytes": 3506,
+          "transferredBytes": 10535,
+          "executionTimeMs": 147
         },
         {
-          "runId": "7b73dd81-50c6-4b36-8de7-0d05171171e2",
+          "runId": "e8d87755-178a-4534-ab59-996ea9fe7716",
           "operation": "sample",
-          "stateBytes": 3524,
-          "transferredBytes": 10551,
-          "executionTimeMs": 133
+          "stateBytes": 3506,
+          "transferredBytes": 10535,
+          "executionTimeMs": 143
         }
       ]
     },
@@ -254,7 +254,7 @@
       "status": "passed",
       "seed": "deterministic modular TPC-H-derived generator",
       "rows": 600000,
-      "datasetId": "77ba2465-0989-4609-8e26-261656c7e102",
+      "datasetId": "34cbfb7d-05df-45db-a10d-7b82605f03af",
       "partitions": 8,
       "provisionedWorkers": 8,
       "warmupsPerPoint": 1,
@@ -268,12 +268,12 @@
             {
               "workers": 1,
               "repetitions": 5,
-              "p50Ms": 146,
-              "p95Ms": 174,
+              "p50Ms": 124,
+              "p95Ms": 173,
               "medianScannedBytes": 3884202,
               "medianTransferredBytes": 6640,
-              "medianPeakTaskMemoryBytes": 39960576,
-              "medianCpuTimeMicros": 1519448,
+              "medianPeakTaskMemoryBytes": 40648704,
+              "medianCpuTimeMicros": 1330450,
               "workersUsed": 1,
               "checksum": "cde972eabec3089c472fdfd1286cff9454a2cf75f8420ee98c5be3a663cff943",
               "speedup": 1,
@@ -282,44 +282,44 @@
             {
               "workers": 2,
               "repetitions": 5,
-              "p50Ms": 125,
-              "p95Ms": 195,
+              "p50Ms": 108,
+              "p95Ms": 114,
               "medianScannedBytes": 3884202,
               "medianTransferredBytes": 6640,
-              "medianPeakTaskMemoryBytes": 20799488,
-              "medianCpuTimeMicros": 931878,
+              "medianPeakTaskMemoryBytes": 15028224,
+              "medianCpuTimeMicros": 1213364,
               "workersUsed": 2,
               "checksum": "cde972eabec3089c472fdfd1286cff9454a2cf75f8420ee98c5be3a663cff943",
-              "speedup": 1.168,
-              "parallelEfficiency": 0.584
+              "speedup": 1.1481481481481481,
+              "parallelEfficiency": 0.5740740740740741
             },
             {
               "workers": 4,
               "repetitions": 5,
-              "p50Ms": 78,
-              "p95Ms": 124,
+              "p50Ms": 81,
+              "p95Ms": 342,
               "medianScannedBytes": 3884202,
               "medianTransferredBytes": 6640,
-              "medianPeakTaskMemoryBytes": 9441280,
-              "medianCpuTimeMicros": 506320,
+              "medianPeakTaskMemoryBytes": 9072640,
+              "medianCpuTimeMicros": 537137,
               "workersUsed": 4,
               "checksum": "cde972eabec3089c472fdfd1286cff9454a2cf75f8420ee98c5be3a663cff943",
-              "speedup": 1.8717948717948718,
-              "parallelEfficiency": 0.46794871794871795
+              "speedup": 1.5308641975308641,
+              "parallelEfficiency": 0.38271604938271603
             },
             {
               "workers": 8,
               "repetitions": 5,
-              "p50Ms": 73,
-              "p95Ms": 83,
+              "p50Ms": 71,
+              "p95Ms": 90,
               "medianScannedBytes": 3884202,
               "medianTransferredBytes": 6640,
-              "medianPeakTaskMemoryBytes": 4829184,
-              "medianCpuTimeMicros": 269065,
+              "medianPeakTaskMemoryBytes": 4640768,
+              "medianCpuTimeMicros": 265089,
               "workersUsed": 8,
               "checksum": "cde972eabec3089c472fdfd1286cff9454a2cf75f8420ee98c5be3a663cff943",
-              "speedup": 2,
-              "parallelEfficiency": 0.25
+              "speedup": 1.7464788732394365,
+              "parallelEfficiency": 0.21830985915492956
             }
           ]
         },
@@ -331,12 +331,12 @@
             {
               "workers": 1,
               "repetitions": 5,
-              "p50Ms": 87,
-              "p95Ms": 91,
+              "p50Ms": 86,
+              "p95Ms": 107,
               "medianScannedBytes": 3884202,
               "medianTransferredBytes": 968,
-              "medianPeakTaskMemoryBytes": 33607680,
-              "medianCpuTimeMicros": 1095761,
+              "medianPeakTaskMemoryBytes": 7864320,
+              "medianCpuTimeMicros": 1194312,
               "workersUsed": 1,
               "checksum": "65fb6cfa610db6b54fe741617b78736bb6b9b94997405a7a141bdf6449b5d4c6",
               "speedup": 1,
@@ -345,44 +345,44 @@
             {
               "workers": 2,
               "repetitions": 5,
-              "p50Ms": 71,
-              "p95Ms": 162,
+              "p50Ms": 83,
+              "p95Ms": 96,
               "medianScannedBytes": 3884202,
               "medianTransferredBytes": 968,
-              "medianPeakTaskMemoryBytes": 18776064,
-              "medianCpuTimeMicros": 740853,
+              "medianPeakTaskMemoryBytes": 9207808,
+              "medianCpuTimeMicros": 932223,
               "workersUsed": 2,
               "checksum": "65fb6cfa610db6b54fe741617b78736bb6b9b94997405a7a141bdf6449b5d4c6",
-              "speedup": 1.2253521126760563,
-              "parallelEfficiency": 0.6126760563380281
+              "speedup": 1.036144578313253,
+              "parallelEfficiency": 0.5180722891566265
             },
             {
               "workers": 4,
               "repetitions": 5,
-              "p50Ms": 69,
-              "p95Ms": 144,
+              "p50Ms": 71,
+              "p95Ms": 87,
               "medianScannedBytes": 3884202,
               "medianTransferredBytes": 968,
-              "medianPeakTaskMemoryBytes": 8794112,
-              "medianCpuTimeMicros": 415981,
+              "medianPeakTaskMemoryBytes": 8708096,
+              "medianCpuTimeMicros": 428106,
               "workersUsed": 4,
               "checksum": "65fb6cfa610db6b54fe741617b78736bb6b9b94997405a7a141bdf6449b5d4c6",
-              "speedup": 1.2608695652173914,
-              "parallelEfficiency": 0.31521739130434784
+              "speedup": 1.2112676056338028,
+              "parallelEfficiency": 0.3028169014084507
             },
             {
               "workers": 8,
               "repetitions": 5,
-              "p50Ms": 64,
-              "p95Ms": 93,
+              "p50Ms": 70,
+              "p95Ms": 83,
               "medianScannedBytes": 3884202,
               "medianTransferredBytes": 968,
-              "medianPeakTaskMemoryBytes": 4476928,
-              "medianCpuTimeMicros": 232625,
+              "medianPeakTaskMemoryBytes": 4579328,
+              "medianCpuTimeMicros": 227465,
               "workersUsed": 8,
               "checksum": "65fb6cfa610db6b54fe741617b78736bb6b9b94997405a7a141bdf6449b5d4c6",
-              "speedup": 1.359375,
-              "parallelEfficiency": 0.169921875
+              "speedup": 1.2285714285714286,
+              "parallelEfficiency": 0.15357142857142858
             }
           ]
         }
@@ -400,9 +400,9 @@
       },
       "skewed": {
         "static": {
-          "p50Ms": 3522,
-          "p95Ms": 3726,
-          "medianCriticalTaskMs": 2243,
+          "p50Ms": 3673,
+          "p95Ms": 3854,
+          "medianCriticalTaskMs": 2548,
           "medianTransferredBytes": 544613,
           "checksum": "643abca73aca2f8e55976e9f0abd5a91fabcca002facd7a45956c31053521ce9",
           "plan": {
@@ -429,7 +429,7 @@
               "bloomBytes": 43744,
               "hotBuckets": [],
               "bytesWritten": 539553,
-              "executionTimeMs": 1228,
+              "executionTimeMs": 1087,
               "logicalPartitions": 8
             },
             "mapreduce": {
@@ -492,7 +492,7 @@
               "executions": 5,
               "emaResultRows": 4,
               "hotBucketCount": 0,
-              "emaStragglerRatio": 24.180585577818057,
+              "emaStragglerRatio": 28.185648402263073,
               "recommendedShuffleBuckets": 8
             },
             "columnReferences": [
@@ -523,9 +523,9 @@
           }
         },
         "adaptive": {
-          "p50Ms": 3205,
-          "p95Ms": 3540,
-          "medianCriticalTaskMs": 1970,
+          "p50Ms": 3200,
+          "p95Ms": 3335,
+          "medianCriticalTaskMs": 1741,
           "medianTransferredBytes": 549023,
           "checksum": "643abca73aca2f8e55976e9f0abd5a91fabcca002facd7a45956c31053521ce9",
           "plan": {
@@ -558,7 +558,7 @@
                 }
               ],
               "bytesWritten": 539553,
-              "executionTimeMs": 1230,
+              "executionTimeMs": 1079,
               "logicalPartitions": 15
             },
             "mapreduce": {
@@ -621,7 +621,7 @@
               "executions": 11,
               "emaResultRows": 4,
               "hotBucketCount": 1,
-              "emaStragglerRatio": 6.0246673034022065,
+              "emaStragglerRatio": 6.039125280400476,
               "recommendedShuffleBuckets": 8
             },
             "columnReferences": [
@@ -650,14 +650,19 @@
             "estimatedProbeBytes": 718861,
             "workerSqlUncombined": "SELECT \"c\".\"region\" AS \"region\", 1 AS \"__r0\", \"o\".\"amount\" AS \"__r1\" FROM \"o\" INNER JOIN \"c\" ON \"o\".\"customer_id\" = \"c\".\"id\""
           }
+        },
+        "adaptiveBenefit": {
+          "p50Latency": true,
+          "criticalTask": true,
+          "transferredBytes": false
         }
       },
       "balanced": {
         "allowedRegression": 0.25,
         "static": {
-          "p50Ms": 1590,
-          "p95Ms": 1607,
-          "medianCriticalTaskMs": 103,
+          "p50Ms": 1570,
+          "p95Ms": 1781,
+          "medianCriticalTaskMs": 116,
           "medianTransferredBytes": 588943,
           "checksum": "bb84dfe72bfc678d5c71725469a4a4153d7fe4bc3bf7486fd4ff346d8de121f8",
           "plan": {
@@ -684,7 +689,7 @@
               "bloomBytes": 43744,
               "hotBuckets": [],
               "bytesWritten": 583844,
-              "executionTimeMs": 1468,
+              "executionTimeMs": 1459,
               "logicalPartitions": 8
             },
             "mapreduce": {
@@ -747,7 +752,7 @@
               "executions": 5,
               "emaResultRows": 4,
               "hotBucketCount": 0,
-              "emaStragglerRatio": 1.1682908615875716,
+              "emaStragglerRatio": 1.316426309385436,
               "recommendedShuffleBuckets": 8
             },
             "columnReferences": [
@@ -778,8 +783,8 @@
           }
         },
         "adaptive": {
-          "p50Ms": 1587,
-          "p95Ms": 1690,
+          "p50Ms": 1540,
+          "p95Ms": 1623,
           "medianCriticalTaskMs": 98,
           "medianTransferredBytes": 588943,
           "checksum": "bb84dfe72bfc678d5c71725469a4a4153d7fe4bc3bf7486fd4ff346d8de121f8",
@@ -807,7 +812,7 @@
               "bloomBytes": 43744,
               "hotBuckets": [],
               "bytesWritten": 583844,
-              "executionTimeMs": 1465,
+              "executionTimeMs": 1461,
               "logicalPartitions": 8
             },
             "mapreduce": {
@@ -870,7 +875,7 @@
               "executions": 11,
               "emaResultRows": 4,
               "hotBucketCount": 0,
-              "emaStragglerRatio": 1.143620471630653,
+              "emaStragglerRatio": 1.2416395592010057,
               "recommendedShuffleBuckets": 8
             },
             "columnReferences": [
@@ -913,14 +918,14 @@
           "sql": "SELECT region, COUNT(*) AS rows, SUM(amount) AS total, AVG(amount) AS average FROM mapreduce_lab GROUP BY region ORDER BY region ASC",
           "checksum": "262fac775618c21cb8afe69a779d111cd2515d8ad764d0b61fcc4bbcacc4686e",
           "enabled": {
-            "p50Ms": 63,
+            "p50Ms": 67,
             "medianTransferredBytes": 5840,
-            "evidenceJobId": "cb096172-6486-47d1-9542-2093b5e90d93"
+            "evidenceJobId": "7d40cae1-bc51-47db-9fb8-b2897ec087a5"
           },
           "disabled": {
-            "p50Ms": 208,
+            "p50Ms": 218,
             "medianTransferredBytes": 5033596,
-            "evidenceJobId": "6b9434bf-6379-4d79-9710-87c9fc4f80aa"
+            "evidenceJobId": "ce32cb1f-506c-4ee3-bffa-3f07e84b14c1"
           },
           "transferReduction": 0.9988397956451014
         },
@@ -928,14 +933,14 @@
           "sql": "SELECT category, COUNT(*) AS rows, MIN(amount) AS minimum, MAX(amount) AS maximum FROM mapreduce_lab GROUP BY category ORDER BY category ASC",
           "checksum": "de9f41236e6d6f1fa75a8dadca33a8c8c98bf171fc55646fd6f1b8ab7708432c",
           "enabled": {
-            "p50Ms": 59,
+            "p50Ms": 60,
             "medianTransferredBytes": 55472,
-            "evidenceJobId": "c5290df3-a6fd-4ba3-9d0a-60903eca5d56"
+            "evidenceJobId": "bde6da66-e68e-4ad8-bfb7-50b5e85f0b01"
           },
           "disabled": {
-            "p50Ms": 179,
+            "p50Ms": 190,
             "medianTransferredBytes": 5108596,
-            "evidenceJobId": "33eda33b-cbaf-4ee7-b3ef-d1ce16dfcc4e"
+            "evidenceJobId": "c2cce411-7db0-4e94-8b4d-413de21b4535"
           },
           "transferReduction": 0.9891414392525852
         },
@@ -943,21 +948,21 @@
           "sql": "SELECT COUNT(*) AS rows, SUM(amount) AS total, AVG(amount) AS average FROM mapreduce_lab WHERE amount >= 250",
           "checksum": "0943828d7359c5b551ae7c1a96829a6d0ff86522eea2c3c57ae977fed979a6e8",
           "enabled": {
-            "p50Ms": 55,
+            "p50Ms": 56,
             "medianTransferredBytes": 1320,
-            "evidenceJobId": "51b7833c-b7bf-42b0-84c6-fa15c8e50ec3"
+            "evidenceJobId": "132245ab-f78d-4818-a8b6-727b19cedc55"
           },
           "disabled": {
-            "p50Ms": 140,
+            "p50Ms": 133,
             "medianTransferredBytes": 3244396,
-            "evidenceJobId": "9d5fb26b-e368-4998-8a8c-6ccd1cce3ca2"
+            "evidenceJobId": "68d8b840-3eca-4ae8-b7e6-61223b16d093"
           },
           "transferReduction": 0.9995931446099675
         }
       ],
       "partitionExplorer": {
         "balanced": {
-          "datasetId": "7ac5c64c-e77e-4758-a9bd-828f45b924ed",
+          "datasetId": "bc2fa110-576b-41b7-8224-8fd6874ca5b1",
           "column": "id",
           "function": "duckdb_hash(id) mod 8",
           "buckets": 8,
@@ -1019,7 +1024,7 @@
           ]
         },
         "skewed": {
-          "datasetId": "7ac5c64c-e77e-4758-a9bd-828f45b924ed",
+          "datasetId": "bc2fa110-576b-41b7-8224-8fd6874ca5b1",
           "column": "region",
           "function": "duckdb_hash(region) mod 8",
           "buckets": 8,
@@ -1135,18 +1140,18 @@
       },
       "straggler": {
         "baseline": {
-          "p50Ms": 951,
-          "p95Ms": 955,
-          "p99Ms": 955,
+          "p50Ms": 966,
+          "p95Ms": 1008,
+          "p99Ms": 1008,
           "checksum": "262fac775618c21cb8afe69a779d111cd2515d8ad764d0b61fcc4bbcacc4686e"
         },
         "speculative": {
-          "p50Ms": 300,
-          "p95Ms": 310,
-          "p99Ms": 310,
+          "p50Ms": 303,
+          "p95Ms": 329,
+          "p99Ms": 329,
           "checksum": "262fac775618c21cb8afe69a779d111cd2515d8ad764d0b61fcc4bbcacc4686e"
         },
-        "p99Improvement": 0.675392670157068
+        "p99Improvement": 0.6736111111111112
       }
     },
     "sparkAbstractions": {
@@ -1155,12 +1160,12 @@
       "partitions": 8,
       "lazyPlanning": {
         "samples": 20,
-        "p95Ms": 8,
+        "p95Ms": 11,
         "thresholdMs": 50
       },
       "cache": {
-        "coldMs": 68,
-        "warmMs": 53,
+        "coldMs": 84,
+        "warmMs": 106,
         "coldHits": 0,
         "warmHits": 8
       },
@@ -1190,7 +1195,7 @@
         "boundedWorkers": [
           {
             "id": "worker-1",
-            "bytes": 833765,
+            "bytes": 840960,
             "evictions": 7
           }
         ]
@@ -1215,7 +1220,7 @@
         },
         {
           "name": "cpu_time_micros",
-          "value": 167883,
+          "value": 165456,
           "committed_partitions": 8
         },
         {
@@ -1250,7 +1255,7 @@
           },
           {
             "name": "cpu_time_micros",
-            "value": 207416,
+            "value": 188400,
             "committed_partitions": 8
           },
           {
@@ -1276,27 +1281,27 @@
         "recomputedPartitions": 1,
         "partitionChecksumMatch": true,
         "ancestor": {
-          "id": "0526b6a9-ab1e-48f2-8a0b-164d19081b9e",
+          "id": "28e77dae-795e-4863-aff8-4531e46e2b7c",
           "kind": "source",
           "operator": "DATASET_SOURCE",
-          "datasetId": "4b425a28-d8d3-494a-8a86-f9d362d37fce"
+          "datasetId": "6cc3dfbf-7e2f-4d7a-8661-15447ba73c8c"
         },
         "replayPath": [
-          "84d8efb7-3c12-42e2-88eb-fa3b0c738a19",
-          "01f3f128-597b-4197-a6ca-f76d851bd770",
-          "0526b6a9-ab1e-48f2-8a0b-164d19081b9e"
+          "7a89729f-303d-4add-b58f-71ddce7883a3",
+          "a9106926-6169-49c7-8abe-9049c84f6bb1",
+          "28e77dae-795e-4863-aff8-4531e46e2b7c"
         ],
         "workerFailure": "worker-1 SIGKILL before replay"
       },
-      "materializedDatasetId": "eddec32f-9670-42c8-acbb-bf5cf037538b"
+      "materializedDatasetId": "f4817a30-28d4-4adf-91ca-e9a696dc30ac"
     },
     "costAnalyzerReplay": {
       "status": "passed",
       "canonicalQueries": 5,
-      "datasetSnapshot": "ca8dfc4e-1e2b-4ab8-a5ed-39465e6833b5",
+      "datasetSnapshot": "175db76b-3898-48b5-bdd2-0345225f9119",
       "autopsies": [
         {
-          "jobId": "0a725f29-43b5-4195-a165-4a19ccc17ac5",
+          "jobId": "9303762f-c3c7-4e1f-8f0e-c8dbdb8f9320",
           "bottleneck": "balanced",
           "costDomains": [
             {
@@ -1313,19 +1318,19 @@
             },
             {
               "name": "computation",
-              "value": 175687,
+              "value": 189183,
               "unit": "microseconds",
               "evidence": "worker process CPU time"
             },
             {
               "name": "waiting",
-              "value": 83313,
+              "value": 76817,
               "unit": "microseconds",
               "evidence": "task wall time minus measured worker CPU; includes I/O and scheduler wait"
             },
             {
               "name": "memory",
-              "value": 4399104,
+              "value": 3362816,
               "unit": "bytes",
               "evidence": "largest task RSS delta"
             },
@@ -1345,24 +1350,24 @@
           "topOperators": [
             {
               "operator": "partition_scan",
-              "taskId": "04473112-1bea-40dd-a09d-7ab27b16a0e3",
-              "workerId": "worker-51951d9fefd1",
+              "taskId": "357c78b7-b0cb-4abd-9088-0cd53222c755",
+              "workerId": "worker-26cd5e0ec95c",
               "attempt": 1,
               "winner": true,
               "durationMs": 35,
               "scannedRows": 5000,
               "producedRows": 4,
-              "scannedBytes": 9079,
+              "scannedBytes": 9080,
               "wireBytes": 610,
-              "cpuTimeMicros": 25854,
-              "peakMemoryBytes": 2514944,
+              "cpuTimeMicros": 25676,
+              "peakMemoryBytes": 2625536,
               "spilledBytes": 0,
               "rowsPerSecond": 142857.14285714287,
-              "bytesPerSecond": 259400
+              "bytesPerSecond": 259428.57142857142
             },
             {
               "operator": "partition_scan",
-              "taskId": "95a9c6b7-4672-45e0-aa35-cdbaf6997f52",
+              "taskId": "9a58e809-7b21-4938-89e6-3af57c57e0e1",
               "workerId": "worker-03ac5da4345d",
               "attempt": 1,
               "winner": true,
@@ -1371,16 +1376,16 @@
               "producedRows": 4,
               "scannedBytes": 9080,
               "wireBytes": 610,
-              "cpuTimeMicros": 25803,
-              "peakMemoryBytes": 2297856,
+              "cpuTimeMicros": 26142,
+              "peakMemoryBytes": 3362816,
               "spilledBytes": 0,
               "rowsPerSecond": 142857.14285714287,
               "bytesPerSecond": 259428.57142857142
             },
             {
               "operator": "partition_scan",
-              "taskId": "a861d8bb-6f69-4367-ba05-907b308e7b05",
-              "workerId": "worker-462f712a4e33",
+              "taskId": "2c10a04a-82b8-48af-87b3-85fe91bc7a4d",
+              "workerId": "worker-20e3a2607cd0",
               "attempt": 1,
               "winner": true,
               "durationMs": 34,
@@ -1388,8 +1393,8 @@
               "producedRows": 4,
               "scannedBytes": 9077,
               "wireBytes": 610,
-              "cpuTimeMicros": 24000,
-              "peakMemoryBytes": 2428928,
+              "cpuTimeMicros": 25330,
+              "peakMemoryBytes": 2916352,
               "spilledBytes": 0,
               "rowsPerSecond": 147058.82352941178,
               "bytesPerSecond": 266970.5882352941
@@ -1401,7 +1406,7 @@
           ]
         },
         {
-          "jobId": "88cb528c-3c6f-42fe-bcec-f054b9a119b0",
+          "jobId": "25b9ae0f-760c-4610-acef-5b03dd77e4a9",
           "bottleneck": "network_shuffle",
           "costDomains": [
             {
@@ -1418,19 +1423,19 @@
             },
             {
               "name": "computation",
-              "value": 168937,
+              "value": 172920,
               "unit": "microseconds",
               "evidence": "worker process CPU time"
             },
             {
               "name": "waiting",
-              "value": 65063,
+              "value": 66080,
               "unit": "microseconds",
               "evidence": "task wall time minus measured worker CPU; includes I/O and scheduler wait"
             },
             {
               "name": "memory",
-              "value": 3317760,
+              "value": 3035136,
               "unit": "bytes",
               "evidence": "largest task RSS delta"
             },
@@ -1450,24 +1455,41 @@
           "topOperators": [
             {
               "operator": "partition_scan",
-              "taskId": "49d2cbe4-3557-4c7f-9027-bf049090cd60",
-              "workerId": "worker-462f712a4e33",
+              "taskId": "2ef3550d-16cc-45ef-ba2f-d9177d78079d",
+              "workerId": "worker-3",
               "attempt": 1,
               "winner": true,
-              "durationMs": 33,
+              "durationMs": 35,
               "scannedRows": 5000,
               "producedRows": 50,
               "scannedBytes": 9077,
               "wireBytes": 7532,
-              "cpuTimeMicros": 24898,
-              "peakMemoryBytes": 2957312,
+              "cpuTimeMicros": 25997,
+              "peakMemoryBytes": 2772992,
               "spilledBytes": 0,
-              "rowsPerSecond": 151515.15151515152,
-              "bytesPerSecond": 275060.6060606061
+              "rowsPerSecond": 142857.14285714287,
+              "bytesPerSecond": 259342.85714285713
             },
             {
               "operator": "partition_scan",
-              "taskId": "684f8927-ac9b-46e6-b9c8-8ab401e9e1d7",
+              "taskId": "60ccd80d-8d24-488f-9ed8-7bb9642d53da",
+              "workerId": "worker-2",
+              "attempt": 1,
+              "winner": true,
+              "durationMs": 34,
+              "scannedRows": 5000,
+              "producedRows": 50,
+              "scannedBytes": 9080,
+              "wireBytes": 7532,
+              "cpuTimeMicros": 26205,
+              "peakMemoryBytes": 2899968,
+              "spilledBytes": 0,
+              "rowsPerSecond": 147058.82352941178,
+              "bytesPerSecond": 267058.82352941175
+            },
+            {
+              "operator": "partition_scan",
+              "taskId": "1a520802-c024-458e-83d2-82f2ce8e4217",
               "workerId": "worker-51951d9fefd1",
               "attempt": 1,
               "winner": true,
@@ -1476,28 +1498,11 @@
               "producedRows": 50,
               "scannedBytes": 9079,
               "wireBytes": 7532,
-              "cpuTimeMicros": 25025,
-              "peakMemoryBytes": 3317760,
+              "cpuTimeMicros": 24782,
+              "peakMemoryBytes": 2949120,
               "spilledBytes": 0,
               "rowsPerSecond": 151515.15151515152,
               "bytesPerSecond": 275121.2121212121
-            },
-            {
-              "operator": "partition_scan",
-              "taskId": "1c0a95de-7af9-4449-a5b9-6512c98e61da",
-              "workerId": "worker-3",
-              "attempt": 1,
-              "winner": true,
-              "durationMs": 32,
-              "scannedRows": 5000,
-              "producedRows": 50,
-              "scannedBytes": 9077,
-              "wireBytes": 7532,
-              "cpuTimeMicros": 24730,
-              "peakMemoryBytes": 3117056,
-              "spilledBytes": 0,
-              "rowsPerSecond": 156250,
-              "bytesPerSecond": 283656.25
             }
           ],
           "suggestions": [
@@ -1507,8 +1512,8 @@
           ]
         },
         {
-          "jobId": "8ba2216f-8dff-492c-b59f-062f5c016646",
-          "bottleneck": "cpu_parallel",
+          "jobId": "c51fc57d-3656-4109-b90f-d4dec5442456",
+          "bottleneck": "straggler",
           "costDomains": [
             {
               "name": "storage",
@@ -1524,19 +1529,19 @@
             },
             {
               "name": "computation",
-              "value": 214958,
+              "value": 201120,
               "unit": "microseconds",
               "evidence": "worker process CPU time"
             },
             {
               "name": "waiting",
-              "value": 78042,
+              "value": 77880,
               "unit": "microseconds",
               "evidence": "task wall time minus measured worker CPU; includes I/O and scheduler wait"
             },
             {
               "name": "memory",
-              "value": 1990656,
+              "value": 17444864,
               "unit": "bytes",
               "evidence": "largest task RSS delta"
             },
@@ -1556,62 +1561,63 @@
           "topOperators": [
             {
               "operator": "partition_scan",
-              "taskId": "1b27da2f-0389-458e-82e0-bf1c8a80dc43",
-              "workerId": "worker-26cd5e0ec95c",
+              "taskId": "00b7c8a5-7fd2-4ec5-b03e-a976733eb87d",
+              "workerId": "worker-1",
               "attempt": 1,
               "winner": true,
-              "durationMs": 59,
+              "durationMs": 67,
               "scannedRows": 5000,
               "producedRows": 1,
-              "scannedBytes": 9080,
+              "scannedBytes": 13034,
               "wireBytes": 126,
-              "cpuTimeMicros": 51378,
-              "peakMemoryBytes": 0,
+              "cpuTimeMicros": 51981,
+              "peakMemoryBytes": 17444864,
               "spilledBytes": 0,
-              "rowsPerSecond": 84745.7627118644,
-              "bytesPerSecond": 153898.30508474575
+              "rowsPerSecond": 74626.86567164179,
+              "bytesPerSecond": 194537.31343283583
             },
             {
               "operator": "partition_scan",
-              "taskId": "4d9a89c0-4429-43de-a903-90fdf8a72529",
-              "workerId": "worker-03ac5da4345d",
-              "attempt": 1,
-              "winner": true,
-              "durationMs": 36,
-              "scannedRows": 5000,
-              "producedRows": 1,
-              "scannedBytes": 9080,
-              "wireBytes": 126,
-              "cpuTimeMicros": 25663,
-              "peakMemoryBytes": 917504,
-              "spilledBytes": 0,
-              "rowsPerSecond": 138888.88888888888,
-              "bytesPerSecond": 252222.22222222222
-            },
-            {
-              "operator": "partition_scan",
-              "taskId": "b23ccb16-f7fd-4d92-ad9b-e277f7ced5ba",
+              "taskId": "6ac01bf3-668a-49cc-a52e-72f985c3ae96",
               "workerId": "worker-2",
               "attempt": 1,
               "winner": true,
-              "durationMs": 36,
+              "durationMs": 34,
               "scannedRows": 5000,
               "producedRows": 1,
               "scannedBytes": 9080,
               "wireBytes": 126,
-              "cpuTimeMicros": 24072,
+              "cpuTimeMicros": 23872,
               "peakMemoryBytes": 786432,
               "spilledBytes": 0,
-              "rowsPerSecond": 138888.88888888888,
-              "bytesPerSecond": 252222.22222222222
+              "rowsPerSecond": 147058.82352941178,
+              "bytesPerSecond": 267058.82352941175
+            },
+            {
+              "operator": "partition_scan",
+              "taskId": "750631d1-3840-45b7-b480-08ed1be2114a",
+              "workerId": "worker-20e3a2607cd0",
+              "attempt": 1,
+              "winner": true,
+              "durationMs": 34,
+              "scannedRows": 5000,
+              "producedRows": 1,
+              "scannedBytes": 9077,
+              "wireBytes": 126,
+              "cpuTimeMicros": 24226,
+              "peakMemoryBytes": 655360,
+              "spilledBytes": 0,
+              "rowsPerSecond": 147058.82352941178,
+              "bytesPerSecond": 266970.5882352941
             }
           ],
           "suggestions": [
+            "Observed straggler ratio was 2.03× (trigger ≥2×); retain speculation or split the hot partition.",
             "Mean cardinality error was 100.0% (trigger >50%); refresh statistics or retain runtime feedback."
           ]
         },
         {
-          "jobId": "f598d03f-67a7-41f6-a76e-d15aac56599f",
+          "jobId": "50ddf177-6424-4e0a-92ea-23903a8aa109",
           "bottleneck": "network_shuffle",
           "costDomains": [
             {
@@ -1628,118 +1634,13 @@
             },
             {
               "name": "computation",
-              "value": 230095,
+              "value": 214415,
               "unit": "microseconds",
               "evidence": "worker process CPU time"
             },
             {
               "name": "waiting",
-              "value": 62905,
-              "unit": "microseconds",
-              "evidence": "task wall time minus measured worker CPU; includes I/O and scheduler wait"
-            },
-            {
-              "name": "memory",
-              "value": 4694016,
-              "unit": "bytes",
-              "evidence": "largest task RSS delta"
-            },
-            {
-              "name": "spill",
-              "value": 0,
-              "unit": "bytes",
-              "evidence": "bytes spilled under worker memory reservation"
-            },
-            {
-              "name": "recomputation",
-              "value": 0,
-              "unit": "microseconds",
-              "evidence": "CPU consumed by failed attempts"
-            }
-          ],
-          "topOperators": [
-            {
-              "operator": "partition_scan",
-              "taskId": "5c73b354-6437-47c3-828d-e2d63202f30d",
-              "workerId": "worker-1",
-              "attempt": 1,
-              "winner": true,
-              "durationMs": 44,
-              "scannedRows": 5000,
-              "producedRows": 50,
-              "scannedBytes": 13034,
-              "wireBytes": 4880,
-              "cpuTimeMicros": 41998,
-              "peakMemoryBytes": 4694016,
-              "spilledBytes": 0,
-              "rowsPerSecond": 113636.36363636363,
-              "bytesPerSecond": 296227.2727272727
-            },
-            {
-              "operator": "partition_scan",
-              "taskId": "c75b154c-405b-4b4a-9531-e520eb1bf0c8",
-              "workerId": "worker-26cd5e0ec95c",
-              "attempt": 1,
-              "winner": true,
-              "durationMs": 43,
-              "scannedRows": 5000,
-              "producedRows": 50,
-              "scannedBytes": 9080,
-              "wireBytes": 4968,
-              "cpuTimeMicros": 35035,
-              "peakMemoryBytes": 0,
-              "spilledBytes": 0,
-              "rowsPerSecond": 116279.06976744186,
-              "bytesPerSecond": 211162.7906976744
-            },
-            {
-              "operator": "partition_scan",
-              "taskId": "4ddc01ca-ed2b-43ec-a397-b1d5917f7d30",
-              "workerId": "worker-51951d9fefd1",
-              "attempt": 1,
-              "winner": true,
-              "durationMs": 38,
-              "scannedRows": 5000,
-              "producedRows": 50,
-              "scannedBytes": 9079,
-              "wireBytes": 4968,
-              "cpuTimeMicros": 28667,
-              "peakMemoryBytes": 1945600,
-              "spilledBytes": 0,
-              "rowsPerSecond": 131578.94736842104,
-              "bytesPerSecond": 238921.05263157896
-            }
-          ],
-          "suggestions": [
-            "Wire/scan ratio was 0.52 (trigger >0.50); add projection, a combiner, or a semi-join filter.",
-            "Mean cardinality error was 99.0% (trigger >50%); refresh statistics or retain runtime feedback."
-          ]
-        },
-        {
-          "jobId": "0d000a9f-e85f-40b2-855d-c744945bdc6d",
-          "bottleneck": "cpu_parallel",
-          "costDomains": [
-            {
-              "name": "storage",
-              "value": 76584,
-              "unit": "bytes",
-              "evidence": "worker bytes read after row-group pruning"
-            },
-            {
-              "name": "communication",
-              "value": 5392,
-              "unit": "bytes",
-              "evidence": "serialized worker-to-coordinator payload"
-            },
-            {
-              "name": "computation",
-              "value": 183067,
-              "unit": "microseconds",
-              "evidence": "worker process CPU time"
-            },
-            {
-              "name": "waiting",
-              "value": 58933,
+              "value": 84585,
               "unit": "microseconds",
               "evidence": "task wall time minus measured worker CPU; includes I/O and scheduler wait"
             },
@@ -1765,54 +1666,159 @@
           "topOperators": [
             {
               "operator": "partition_scan",
-              "taskId": "158e6caf-f676-446a-89f9-fa2fa9594099",
-              "workerId": "worker-26cd5e0ec95c",
+              "taskId": "8b85c395-0411-43e6-9100-541373d8d89b",
+              "workerId": "worker-1",
               "attempt": 1,
               "winner": true,
-              "durationMs": 33,
+              "durationMs": 48,
               "scannedRows": 5000,
-              "producedRows": 4,
-              "scannedBytes": 9080,
-              "wireBytes": 674,
-              "cpuTimeMicros": 23744,
-              "peakMemoryBytes": 4251648,
+              "producedRows": 50,
+              "scannedBytes": 13034,
+              "wireBytes": 4880,
+              "cpuTimeMicros": 46568,
+              "peakMemoryBytes": 5242880,
               "spilledBytes": 0,
-              "rowsPerSecond": 151515.15151515152,
-              "bytesPerSecond": 275151.51515151514
+              "rowsPerSecond": 104166.66666666667,
+              "bytesPerSecond": 271541.6666666667
             },
             {
               "operator": "partition_scan",
-              "taskId": "c1974661-0f00-4f90-a16f-9bbfcb40fdee",
+              "taskId": "e921e8e4-0076-42ea-930c-5b0fbc5ba486",
+              "workerId": "worker-51951d9fefd1",
+              "attempt": 1,
+              "winner": true,
+              "durationMs": 42,
+              "scannedRows": 5000,
+              "producedRows": 50,
+              "scannedBytes": 9079,
+              "wireBytes": 4968,
+              "cpuTimeMicros": 27343,
+              "peakMemoryBytes": 2998272,
+              "spilledBytes": 0,
+              "rowsPerSecond": 119047.61904761905,
+              "bytesPerSecond": 216166.66666666666
+            },
+            {
+              "operator": "partition_scan",
+              "taskId": "d082ac19-cf14-4955-87b1-19a4290714f1",
               "workerId": "worker-2",
               "attempt": 1,
               "winner": true,
-              "durationMs": 33,
+              "durationMs": 40,
               "scannedRows": 5000,
-              "producedRows": 4,
+              "producedRows": 50,
               "scannedBytes": 9080,
-              "wireBytes": 674,
-              "cpuTimeMicros": 25040,
-              "peakMemoryBytes": 4689920,
+              "wireBytes": 4912,
+              "cpuTimeMicros": 26445,
+              "peakMemoryBytes": 2752512,
               "spilledBytes": 0,
-              "rowsPerSecond": 151515.15151515152,
-              "bytesPerSecond": 275151.51515151514
+              "rowsPerSecond": 125000,
+              "bytesPerSecond": 227000
+            }
+          ],
+          "suggestions": [
+            "Wire/scan ratio was 0.52 (trigger >0.50); add projection, a combiner, or a semi-join filter.",
+            "Mean cardinality error was 99.0% (trigger >50%); refresh statistics or retain runtime feedback."
+          ]
+        },
+        {
+          "jobId": "5b4f0090-dada-4385-baaf-ea7afb086834",
+          "bottleneck": "cpu_parallel",
+          "costDomains": [
+            {
+              "name": "storage",
+              "value": 76584,
+              "unit": "bytes",
+              "evidence": "worker bytes read after row-group pruning"
             },
             {
+              "name": "communication",
+              "value": 5392,
+              "unit": "bytes",
+              "evidence": "serialized worker-to-coordinator payload"
+            },
+            {
+              "name": "computation",
+              "value": 191289,
+              "unit": "microseconds",
+              "evidence": "worker process CPU time"
+            },
+            {
+              "name": "waiting",
+              "value": 58711,
+              "unit": "microseconds",
+              "evidence": "task wall time minus measured worker CPU; includes I/O and scheduler wait"
+            },
+            {
+              "name": "memory",
+              "value": 5660672,
+              "unit": "bytes",
+              "evidence": "largest task RSS delta"
+            },
+            {
+              "name": "spill",
+              "value": 0,
+              "unit": "bytes",
+              "evidence": "bytes spilled under worker memory reservation"
+            },
+            {
+              "name": "recomputation",
+              "value": 0,
+              "unit": "microseconds",
+              "evidence": "CPU consumed by failed attempts"
+            }
+          ],
+          "topOperators": [
+            {
               "operator": "partition_scan",
-              "taskId": "ee517f23-fca7-479a-968e-e864ae43ce4a",
+              "taskId": "e80446b4-07f0-4124-8fa2-0b76931e7ec3",
               "workerId": "worker-03ac5da4345d",
               "attempt": 1,
               "winner": true,
-              "durationMs": 33,
+              "durationMs": 36,
               "scannedRows": 5000,
               "producedRows": 4,
               "scannedBytes": 9080,
               "wireBytes": 674,
-              "cpuTimeMicros": 25852,
-              "peakMemoryBytes": 2891776,
+              "cpuTimeMicros": 26263,
+              "peakMemoryBytes": 5111808,
               "spilledBytes": 0,
-              "rowsPerSecond": 151515.15151515152,
-              "bytesPerSecond": 275151.51515151514
+              "rowsPerSecond": 138888.88888888888,
+              "bytesPerSecond": 252222.22222222222
+            },
+            {
+              "operator": "partition_scan",
+              "taskId": "db2c65c6-2ff9-4f57-b34d-b77d8584a218",
+              "workerId": "worker-51951d9fefd1",
+              "attempt": 1,
+              "winner": true,
+              "durationMs": 35,
+              "scannedRows": 5000,
+              "producedRows": 4,
+              "scannedBytes": 9079,
+              "wireBytes": 674,
+              "cpuTimeMicros": 26448,
+              "peakMemoryBytes": 4661248,
+              "spilledBytes": 0,
+              "rowsPerSecond": 142857.14285714287,
+              "bytesPerSecond": 259400
+            },
+            {
+              "operator": "partition_scan",
+              "taskId": "d88fbd62-65d8-4df9-91a2-339c92ca0af0",
+              "workerId": "worker-3",
+              "attempt": 1,
+              "winner": true,
+              "durationMs": 34,
+              "scannedRows": 5000,
+              "producedRows": 4,
+              "scannedBytes": 9077,
+              "wireBytes": 674,
+              "cpuTimeMicros": 27464,
+              "peakMemoryBytes": 4706304,
+              "spilledBytes": 0,
+              "rowsPerSecond": 147058.82352941178,
+              "bytesPerSecond": 266970.5882352941
             }
           ],
           "suggestions": [
@@ -1822,11 +1828,11 @@
       ],
       "whatIf": [
         {
-          "jobId": "0a725f29-43b5-4195-a165-4a19ccc17ac5",
+          "jobId": "9303762f-c3c7-4e1f-8f0e-c8dbdb8f9320",
           "projection": {
             "model": "evidence-weighted Amdahl projection v1",
-            "baselineExecutionTimeMs": 300,
-            "predictedExecutionTimeMs": 209,
+            "baselineExecutionTimeMs": 303,
+            "predictedExecutionTimeMs": 211,
             "predictedSpeedup": 1.434462972924511,
             "inputs": {
               "currentWorkers": 7,
@@ -1849,28 +1855,28 @@
             "confidence": "medium"
           },
           "measured": {
-            "jobId": "151a9cf5-b1f7-4628-9b3d-e1b8363f1fc8",
+            "jobId": "2f069460-9698-476e-b623-b9aeea83551f",
             "checksumMatch": true,
             "baseline": {
-              "latencyMs": 300,
+              "latencyMs": 303,
               "bytes": 4880,
-              "cpuMicros": 175687,
-              "peakMemoryBytes": 4399104
+              "cpuMicros": 189183,
+              "peakMemoryBytes": 3362816
             },
             "comparison": {
-              "latencyMs": 301,
+              "latencyMs": 302,
               "bytes": 4880,
-              "cpuMicros": 168232,
-              "peakMemoryBytes": 3383296
+              "cpuMicros": 179427,
+              "peakMemoryBytes": 3407872
             }
           }
         },
         {
-          "jobId": "88cb528c-3c6f-42fe-bcec-f054b9a119b0",
+          "jobId": "25b9ae0f-760c-4610-acef-5b03dd77e4a9",
           "projection": {
             "model": "evidence-weighted Amdahl projection v1",
-            "baselineExecutionTimeMs": 299,
-            "predictedExecutionTimeMs": 208,
+            "baselineExecutionTimeMs": 289,
+            "predictedExecutionTimeMs": 201,
             "predictedSpeedup": 1.434462972924511,
             "inputs": {
               "currentWorkers": 7,
@@ -1893,28 +1899,28 @@
             "confidence": "medium"
           },
           "measured": {
-            "jobId": "a80013b1-9648-4c34-beb8-65b4afc42c75",
+            "jobId": "cfe085d8-0b85-4cdb-a230-41ab31ff4201",
             "checksumMatch": true,
             "baseline": {
-              "latencyMs": 299,
+              "latencyMs": 289,
               "bytes": 60256,
-              "cpuMicros": 168937,
-              "peakMemoryBytes": 3317760
+              "cpuMicros": 172920,
+              "peakMemoryBytes": 3035136
             },
             "comparison": {
-              "latencyMs": 102,
+              "latencyMs": 287,
               "bytes": 60256,
-              "cpuMicros": 226490,
-              "peakMemoryBytes": 20480000
+              "cpuMicros": 156379,
+              "peakMemoryBytes": 3227648
             }
           }
         },
         {
-          "jobId": "8ba2216f-8dff-492c-b59f-062f5c016646",
+          "jobId": "c51fc57d-3656-4109-b90f-d4dec5442456",
           "projection": {
             "model": "evidence-weighted Amdahl projection v1",
-            "baselineExecutionTimeMs": 80,
-            "predictedExecutionTimeMs": 62,
+            "baselineExecutionTimeMs": 85,
+            "predictedExecutionTimeMs": 66,
             "predictedSpeedup": 1.282051282051282,
             "inputs": {
               "currentWorkers": 8,
@@ -1937,28 +1943,28 @@
             "confidence": "medium"
           },
           "measured": {
-            "jobId": "1382af2d-4087-47dd-af15-db8154e03823",
+            "jobId": "45a73096-787b-49b9-82eb-caaa5e3f3ec9",
             "checksumMatch": true,
             "baseline": {
-              "latencyMs": 80,
+              "latencyMs": 85,
               "bytes": 1008,
-              "cpuMicros": 214958,
-              "peakMemoryBytes": 1990656
+              "cpuMicros": 201120,
+              "peakMemoryBytes": 17444864
             },
             "comparison": {
-              "latencyMs": 104,
+              "latencyMs": 59,
               "bytes": 1008,
-              "cpuMicros": 136894,
-              "peakMemoryBytes": 2867200
+              "cpuMicros": 159118,
+              "peakMemoryBytes": 3538944
             }
           }
         },
         {
-          "jobId": "f598d03f-67a7-41f6-a76e-d15aac56599f",
+          "jobId": "50ddf177-6424-4e0a-92ea-23903a8aa109",
           "projection": {
             "model": "evidence-weighted Amdahl projection v1",
-            "baselineExecutionTimeMs": 78,
-            "predictedExecutionTimeMs": 61,
+            "baselineExecutionTimeMs": 74,
+            "predictedExecutionTimeMs": 58,
             "predictedSpeedup": 1.282051282051282,
             "inputs": {
               "currentWorkers": 8,
@@ -1981,28 +1987,28 @@
             "confidence": "medium"
           },
           "measured": {
-            "jobId": "57c2d7e5-c4b1-42f6-8fd8-1fe64bdc8d0b",
+            "jobId": "1794577c-a1dd-47ad-a84d-164d99935e56",
             "checksumMatch": true,
             "baseline": {
-              "latencyMs": 78,
+              "latencyMs": 74,
               "bytes": 39600,
-              "cpuMicros": 230095,
-              "peakMemoryBytes": 4694016
+              "cpuMicros": 214415,
+              "peakMemoryBytes": 5242880
             },
             "comparison": {
-              "latencyMs": 62,
+              "latencyMs": 65,
               "bytes": 39616,
-              "cpuMicros": 178895,
-              "peakMemoryBytes": 3932160
+              "cpuMicros": 183599,
+              "peakMemoryBytes": 3801088
             }
           }
         },
         {
-          "jobId": "0d000a9f-e85f-40b2-855d-c744945bdc6d",
+          "jobId": "5b4f0090-dada-4385-baaf-ea7afb086834",
           "projection": {
             "model": "evidence-weighted Amdahl projection v1",
-            "baselineExecutionTimeMs": 55,
-            "predictedExecutionTimeMs": 43,
+            "baselineExecutionTimeMs": 61,
+            "predictedExecutionTimeMs": 48,
             "predictedSpeedup": 1.282051282051282,
             "inputs": {
               "currentWorkers": 8,
@@ -2025,36 +2031,36 @@
             "confidence": "medium"
           },
           "measured": {
-            "jobId": "c8148386-8674-45f0-b861-5b10789b79fe",
+            "jobId": "7a5e8bc0-7a8d-41e0-b0f9-b97c953a55e5",
             "checksumMatch": true,
             "baseline": {
-              "latencyMs": 55,
+              "latencyMs": 61,
               "bytes": 5392,
-              "cpuMicros": 183067,
-              "peakMemoryBytes": 5242880
+              "cpuMicros": 191289,
+              "peakMemoryBytes": 5660672
             },
             "comparison": {
-              "latencyMs": 53,
+              "latencyMs": 59,
               "bytes": 5392,
-              "cpuMicros": 164646,
-              "peakMemoryBytes": 4849664
+              "cpuMicros": 167790,
+              "peakMemoryBytes": 3284992
             }
           }
         }
       ],
-      "measuredSpeedups": 3,
+      "measuredSpeedups": 5,
       "workload": {
-        "id": "c27d82e9-ce5d-4ee0-af8c-54bb7ba42f66",
-        "replayId": "573cb265-7f24-47b2-b6c9-8cc9105e479d",
+        "id": "7b124b3a-53a7-4f96-a8aa-5b3d86ae4eda",
+        "replayId": "12922640-ec3d-40af-b6db-91457ee5aef4",
         "checksumMatches": 5,
         "results": [
           {
             "sequenceNumber": 0,
-            "jobId": "20e7b42b-12a2-4b08-9e13-9d98a9e6bdce",
+            "jobId": "effbda3a-fdd6-4c9f-88f2-d885054e4862",
             "checksumMatch": true,
-            "baselineLatencyMs": 300,
-            "replayLatencyMs": 52,
-            "latencyDelta": -0.8266666666666667,
+            "baselineLatencyMs": 303,
+            "replayLatencyMs": 58,
+            "latencyDelta": -0.8085808580858086,
             "baselineStrategy": "partition_scan",
             "replayStrategy": "partition_scan",
             "baselineResultRows": null,
@@ -2062,11 +2068,11 @@
           },
           {
             "sequenceNumber": 1,
-            "jobId": "9844f73c-8bf7-4061-975c-b99c4efcd884",
+            "jobId": "2288b30b-e79f-4da1-85a1-ffdeab7c5ab0",
             "checksumMatch": true,
-            "baselineLatencyMs": 299,
-            "replayLatencyMs": 75,
-            "latencyDelta": -0.7491638795986622,
+            "baselineLatencyMs": 289,
+            "replayLatencyMs": 54,
+            "latencyDelta": -0.8131487889273357,
             "baselineStrategy": "partition_scan",
             "replayStrategy": "partition_scan",
             "baselineResultRows": null,
@@ -2074,11 +2080,11 @@
           },
           {
             "sequenceNumber": 2,
-            "jobId": "65b85939-2f3f-4d15-a328-1b6d0a2a6d05",
+            "jobId": "0af37d4c-086a-47d5-b44b-82feac3831b0",
             "checksumMatch": true,
-            "baselineLatencyMs": 80,
-            "replayLatencyMs": 54,
-            "latencyDelta": -0.32499999999999996,
+            "baselineLatencyMs": 85,
+            "replayLatencyMs": 55,
+            "latencyDelta": -0.3529411764705882,
             "baselineStrategy": "partition_scan",
             "replayStrategy": "partition_scan",
             "baselineResultRows": null,
@@ -2086,11 +2092,11 @@
           },
           {
             "sequenceNumber": 3,
-            "jobId": "459363ed-55e0-47b9-a628-14a532516110",
+            "jobId": "f8ee777a-ddf9-43b7-ac6f-a5e69dda7b3f",
             "checksumMatch": true,
-            "baselineLatencyMs": 78,
-            "replayLatencyMs": 65,
-            "latencyDelta": -0.16666666666666663,
+            "baselineLatencyMs": 74,
+            "replayLatencyMs": 75,
+            "latencyDelta": 0.013513513513513598,
             "baselineStrategy": "partition_scan",
             "replayStrategy": "partition_scan",
             "baselineResultRows": null,
@@ -2098,11 +2104,11 @@
           },
           {
             "sequenceNumber": 4,
-            "jobId": "368cf27d-4e01-4db7-bb7c-5b2efa212778",
+            "jobId": "1f7fc43d-ac02-4cff-84a4-15eaa18d7f48",
             "checksumMatch": true,
-            "baselineLatencyMs": 55,
-            "replayLatencyMs": 56,
-            "latencyDelta": 0.018181818181818077,
+            "baselineLatencyMs": 61,
+            "replayLatencyMs": 53,
+            "latencyDelta": -0.1311475409836066,
             "baselineStrategy": "partition_scan",
             "replayStrategy": "partition_scan",
             "baselineResultRows": null,
@@ -2113,8 +2119,8 @@
     },
     "streamingExactlyOnce": {
       "status": "passed",
-      "queryId": "2958957b-7f1a-4c14-84bc-e78581976b55",
-      "topic": "exactly_once_2a855d37",
+      "queryId": "9cf63896-28b1-45ac-ae29-21ac4d83c3a3",
+      "topic": "exactly_once_7e176e14",
       "committedInputEvents": 602,
       "acceptedWindowEvents": 601,
       "acceptedLateEvents": 1,
@@ -2125,11 +2131,11 @@
       "committedBatches": 4,
       "durableOffsets": [
         {
-          "query_id": "2958957b-7f1a-4c14-84bc-e78581976b55",
-          "topic": "exactly_once_2a855d37",
+          "query_id": "9cf63896-28b1-45ac-ae29-21ac4d83c3a3",
+          "topic": "exactly_once_7e176e14",
           "partition": 0,
           "next_offset": "602",
-          "updated_at": "2026-10-02T09:19:34.301Z"
+          "updated_at": "2026-10-02T09:29:33.160Z"
         }
       ],
       "hllConfiguredError": 0.008125,
@@ -2157,7 +2163,7 @@
           "exactRevenue": 17
         }
       },
-      "materializedDatasetId": "fb00705c-42eb-4c50-8220-484529c60b61",
+      "materializedDatasetId": "c1e2e0f7-e9fa-4cd0-b99c-a355d5a2d979",
       "materializedOutputEpoch": {
         "0": "602"
       },
@@ -2223,7 +2229,7 @@
     },
     "coordinatorRestart": {
       "status": "passed",
-      "jobId": "9f4b90e3-97b5-42af-a352-0d6fd241f92e",
+      "jobId": "9e118408-9b48-406f-9b64-c7e42442279f",
       "checksum": "d916efcaafb0176a3ec8de3d7c34357ae5c9f97818f200725bed0b35d6faec64",
       "abandonedAttempts": 6,
       "totalAttempts": 9
