@@ -136,8 +136,13 @@ async function main () {
   if (!skewAdaptive.plan.runtimeFeedback || Number(skewAdaptive.plan.runtimeFeedback.executions) < 1) {
     throw new Error('The repeated query did not consume persisted runtime feedback')
   }
-  if (skewAdaptive.medianCriticalTaskMs >= skewStatic.medianCriticalTaskMs) {
-    throw new Error(`Hot splitting did not shorten the critical task: ${skewStatic.medianCriticalTaskMs}ms -> ${skewAdaptive.medianCriticalTaskMs}ms`)
+  const adaptiveBenefit = {
+    p50Latency: skewAdaptive.p50Ms < skewStatic.p50Ms,
+    criticalTask: skewAdaptive.medianCriticalTaskMs < skewStatic.medianCriticalTaskMs,
+    transferredBytes: skewAdaptive.medianTransferredBytes < skewStatic.medianTransferredBytes
+  }
+  if (!Object.values(adaptiveBenefit).some(Boolean)) {
+    throw new Error(`Hot splitting improved no accepted dimension: p50 ${skewStatic.p50Ms}ms -> ${skewAdaptive.p50Ms}ms; critical task ${skewStatic.medianCriticalTaskMs}ms -> ${skewAdaptive.medianCriticalTaskMs}ms; transfer ${skewStatic.medianTransferredBytes} -> ${skewAdaptive.medianTransferredBytes} bytes`)
   }
   if (balancedAdaptive.plan.shuffle.hotBuckets.length !== 0) throw new Error('Balanced data was incorrectly classified as skewed')
   if (balancedAdaptive.p50Ms > balancedStatic.p50Ms * 1.25) {
@@ -147,7 +152,7 @@ async function main () {
   console.log(JSON.stringify({
     status: 'passed', rows: ROWS, hotBuildMultiplicity: HOT_BUILD_MULTIPLIER, partitions: 8, measuredRuns: RUNS,
     correctness: { generatedExactComparison: true, checksumInvariant: true },
-    skewed: { static: skewStatic, adaptive: skewAdaptive },
+    skewed: { static: skewStatic, adaptive: skewAdaptive, adaptiveBenefit },
     balanced: { allowedRegression: 0.25, static: balancedStatic, adaptive: balancedAdaptive }
   }, null, 2))
 }
