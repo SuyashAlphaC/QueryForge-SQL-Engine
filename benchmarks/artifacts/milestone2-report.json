@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-02T09:29:55.046Z",
+  "generatedAt": "2026-10-02T09:40:47.105Z",
   "verificationState": "full-matrix-passed",
   "verificationReport": "verification-report.json",
   "ablations": [
@@ -25,15 +25,15 @@
       "title": "Warm worker cache",
       "baseline": {
         "label": "cold",
-        "value": 84,
+        "value": 66,
         "unit": "ms"
       },
       "optimized": {
         "label": "warm",
-        "value": 106,
+        "value": 51,
         "unit": "ms"
       },
-      "improvement": "26.2% higher measured latency in this run; 8 cache hits (no improvement claimed)",
+      "improvement": "22.7% lower measured latency; 8 cache hits",
       "invariant": "identical result checksum"
     },
     {
@@ -41,15 +41,15 @@
       "title": "Duration-aware speculation",
       "baseline": {
         "label": "disabled",
-        "value": 1008,
+        "value": 954,
         "unit": "ms p99"
       },
       "optimized": {
         "label": "enabled",
-        "value": 329,
+        "value": 305,
         "unit": "ms p99"
       },
-      "improvement": "67.36% lower injected-straggler p99",
+      "improvement": "68.03% lower injected-straggler p99",
       "invariant": "identical result checksum"
     }
   ],
