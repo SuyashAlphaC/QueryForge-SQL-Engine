@@ -82,6 +82,10 @@ function milestone2Evidence (report) {
   const spark = report.results.sparkAbstractions
   const stream = report.results.streamingExactlyOnce
   const transferReduction = mapreduce.combiner.reduce((sum, item) => sum + item.transferReduction, 0) / mapreduce.combiner.length
+  const cacheDelta = 1 - spark.cache.warmMs / Math.max(1, spark.cache.coldMs)
+  const cacheComparison = cacheDelta >= 0
+    ? `${(cacheDelta * 100).toFixed(1)}% lower measured latency; ${spark.cache.warmHits} cache hits`
+    : `${Math.abs(cacheDelta * 100).toFixed(1)}% higher measured latency in this run; ${spark.cache.warmHits} cache hits (no improvement claimed)`
   return {
     schemaVersion: 1,
     generatedAt: report.completedAt,
@@ -99,7 +103,7 @@ function milestone2Evidence (report) {
         id: 'worker-cache', title: 'Warm worker cache',
         baseline: { label: 'cold', value: spark.cache.coldMs, unit: 'ms' },
         optimized: { label: 'warm', value: spark.cache.warmMs, unit: 'ms' },
-        improvement: `${((1 - spark.cache.warmMs / Math.max(1, spark.cache.coldMs)) * 100).toFixed(1)}% lower measured latency; ${spark.cache.warmHits} cache hits`,
+        improvement: cacheComparison,
         invariant: 'identical result checksum'
       },
       {
