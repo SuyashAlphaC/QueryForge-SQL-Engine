@@ -205,7 +205,7 @@ async function main () {
       body: JSON.stringify({ jobId: cold.jobId, logicalPartitionKey })
     })).payload
   } finally {
-    execFileSync('docker', ['compose', 'up', '-d', 'worker-1'], { cwd: ROOT, stdio: 'ignore' })
+    execFileSync('docker', ['compose', 'start', 'worker-1'], { cwd: ROOT, stdio: 'ignore' })
   }
   const recoveryJob = (await request(`/api/query/jobs/${recovered.recoveryJobId}`)).payload
   if (recoveryJob.tasks.filter(task => task.is_winner).length !== 1 || !recovered.partitionChecksumMatch || !recovered.ancestor || recovered.replayPath.length < 2) throw new Error('Lineage recovery was not single-partition/checksum-safe or omitted its replay path')
